@@ -1,6 +1,7 @@
 WITH XO AS ( 
 SELECT
 s.date_date,
+s.orders_id,
 s.products_id,
 s.revenue,
 s.quantity,
@@ -13,6 +14,7 @@ USING (products_id)
 
 SELECT 
 date_date,
+orders_id,
 products_id,
 revenue,
 quantity,
