@@ -33,9 +33,11 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: "Table Sales"
-        tests:
-          - unique:
-              colomn_name: "(orders_id || '-' || products_id)"
+        loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+        freshness:
+          warn_after:
+            count: 90
+            period: day
         columns:
           - name: date_date
             description: "date de vente"
@@ -47,4 +49,7 @@ sources:
             description: "chiffres d'affaire"
           - name: quantity
             description: "nb d'unité vendu"
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
 
