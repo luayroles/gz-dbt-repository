@@ -10,14 +10,20 @@ sources:
         columns:
           - name: products_id
             description: "identification produit" 
+            tests:
+              - unique
+              - not_null
           - name: purchase_price
-            description: "prix d'achat par produit"
+            description: "prix d'achat par produit"        
       - name: ship
         identifier: raw_gz_ship
         description: "Table ship"
         columns:
           - name: orders_id
             description: "identification de l'order"
+            tests:
+              - unique
+              - not_null
           - name: shipping_fee
             description: "frais de livraison"
           - name: logcost
@@ -27,6 +33,9 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: "Table Sales"
+        tests:
+          - unique:
+              colomn_name: "(orders_id || '-' || products_id)"
         columns:
           - name: date_date
             description: "date de vente"
