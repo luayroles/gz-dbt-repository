@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+
 SELECT
 m.date_date,
 ROUND(SUM(m.revenue),1) AS revenue,
