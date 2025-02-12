@@ -101,4 +101,23 @@ sources:
             tests:
               - not_null
 
+models:
+  - name: int_campaigns
+    description: campagne facebook,bing,criteo,bing
+    columns:
+      - name: date_date
+        tests:
+        - not_null
+      - name: ads_cost
+        tests:
+        - not_null
+      - name: ads_impressions
+        tests:
+        - not_null
+      - name: ads_cliks
+        tests:
+        - not_null
 
+models:
+  - name: finance_campaigns_day
+    description: fusion finance et campaign 
