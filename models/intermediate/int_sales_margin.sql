@@ -21,4 +21,5 @@ quantity,
 purchase_price,
 purchase_costs,
 round((revenue - purchase_costs),1) AS margin, 
+{{ margin_percent('p.purchase_costs','s.revenue') }} AS margin_percent
 FROM XO

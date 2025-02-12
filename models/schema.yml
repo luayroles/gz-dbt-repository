@@ -78,6 +78,5 @@ models:
   - name: int_campaigns
     description: campagne facebook,bing,criteo,bing
 
-
   
 
