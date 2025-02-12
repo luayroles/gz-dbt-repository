@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 SELECT
 m.date_date,
 ROUND(SUM(m.revenue),1) AS revenue,
@@ -13,4 +14,3 @@ from {{ ref("int_sales_margin")}}  as m
 JOIN {{ ref("int_orders_operational")}} as o
 USING (orders_id)
 GROUP BY date_date
-
